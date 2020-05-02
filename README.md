@@ -29,14 +29,24 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead
 
 1. Describe the biggest difference between `.forEach` & `.map`.
+   .forEach calls a function on each item it loops through but it does not create a new array with the info. Whereas .map loops through, calls a function and creates a new array for each item it loops through.  
 
 2. What is the difference between a function and a method?
+ a method is a function within a function or an object. 
 
 3. What is closure?
+closure refers to how referencing works and what information each object/function/method has access to. It deals with nesting and what each item can see. In javascript it also refers to how javascript will 'close' one process by resolving all it can then passing that to the next point of closure. -- I think.
 
 4. Describe the four rules of the 'this' keyword.
+1.Whenever a function is contained in the global scope, the value of this inside of that function will be the window object. - in otherwords you need to put 'this' inside a function/object/something other than the global scope in order for 'this' not to pull from the global scope and usually cause an error. 
+2.Whenever a function is called by a preceding dot, the object before that dot is this. - in other words, when you refer to something with .something, any 'this' you add into that code is what 'this' is. 
+3.Whenever a constructor function is used, this refers to the specific instance of the object that is created and returned by the constructor function. - meaning 'this' points to the constructor and all the prototypes referencing the constructor with 'this' also point to that same constructor. 
+Whenever JavaScript’s call or apply method is used, this is explicitly defined. Meaning it refers to the item within which 'this' is contained. 
 
 5. Why do we need super() in an extended class?
+We need it because the nested classes are unable to access the extended class otherwise. 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
 
 ## Project Set up
 
