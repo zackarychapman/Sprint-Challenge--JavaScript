@@ -14,7 +14,7 @@ const tyrannosaurus = {
   length: '12m',
   period: 'Late Cretaceous',
   roar: function scaryRoar () {
-    return "RAWERSRARARWERSARARARRRR!";
+    return `RAWERSRARARWERSARARARRRR!`;
   }
 }
 
@@ -52,7 +52,7 @@ console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log(tyrannosaurus.roar);//THIS ONE NEEDS JUST A LITTLE HELP!//
+console.log(tyrannosaurus.roar());//THIS ONE NEEDS JUST A LITTLE HELP!//
 
 
 // ==== Arrays ====
@@ -76,7 +76,7 @@ const graduates = [
 
 Once you have the new array created, log the result. */
 const universities = [];
-graduates.forEach(item => {university.push(item.universities)};
+graduates.forEach(item => {university.push(item.universities)});
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
@@ -124,6 +124,7 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 const displayNames = [];
 console.log(displayNames);
+zooAnimals.forEach(item =>  {displayNames.push(`${item.animal_name}, ${item.scientific_name}`)});
 
 /* Request 2: .map()
 
@@ -133,13 +134,14 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 const lowCaseAnimalNames = [];
 console.log(lowCaseAnimalNames);
+zooAnimals.map(item => {lowCaseAnimalNames.push((`${item.animal_name}`).toLowerCase)});
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = [];
+const lowPopulationAnimals = zooAnimals.filter(item => item.population < 5);
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -147,8 +149,9 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((total, currentValue) => total + currentValue.population,0);
 console.log(populationTotal);
+
 
 
 /*
